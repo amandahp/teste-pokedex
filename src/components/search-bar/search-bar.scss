@@ -43,3 +43,15 @@ $ColorSearchBar: #F5C3C1;
   transform: translate(-50%, -50%);
   margin-top: -150px;
 }
+
+@media only screen and (max-width: 768px) and (min-width: 768px){
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -300px;
+  }
+
+}
