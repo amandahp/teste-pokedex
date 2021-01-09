@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { triggerGetPokemonData, triggerGetPokemonInfo } from '../../redux/actions';
 import Card from '../../components/cards/card'
 import Header from '../../components/header/header'
+import SearchBar from '../../components/search-bar/search-bar'
+import Spinner from '../../components/spinner/spinner'
 import './home.scss';
 
 const Home = () => {
@@ -34,16 +36,17 @@ const Home = () => {
 			{displayedPokemon.length && !loading ? (
 				<div>
 					<Header />
-					<div className='grid-container'> 
+					<div className='grid-container'>
+						<SearchBar className='search-bar-home' />
 						{displayedPokemon.map((pokemon, index) => {
-							return (
-								<Card key={index+1} specificPokemonData={pokemon} />
-								)
-							})}
+						return (
+							<Card key={index+1} specificPokemonData={pokemon} />
+							)
+						})}
 					</div>
 				</div>
 			): (
-				<div><p>'loading'</p></div>
+				<div><Spinner></Spinner></div>
 			)}
 		</>
 	)
