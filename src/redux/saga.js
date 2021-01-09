@@ -5,6 +5,7 @@ import { getPokemonInfo } from '../services/getPokemonInfo';
 import { triggerGetPokemonError, triggerGetPokemonInfoError, triggerGetPokemonSuccess, triggerGetPokemonInfoSuccess } from './actions'
 
 export function* fetchPokemonData() {
+	console.log('chegou aqui')
 	try {
 		const data = yield call(getPokemonData)
 		yield put(triggerGetPokemonSuccess(data))

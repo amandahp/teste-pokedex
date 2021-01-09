@@ -27,7 +27,7 @@ const Card = ( {specificPokemonData} ) => {
 									</p>
 								</div>
 								<p className='title'>BASE STATS</p>
-								<p className="stats-base-p">
+								<div className="stats-base-p">
 									{specificPokemonData.stats.map((stat, index) => {
 									return (
 										<div key={index+1}>
@@ -38,7 +38,7 @@ const Card = ( {specificPokemonData} ) => {
 										</div>
 									)	
 								})}
-								</p>
+								</div>
 							</div>
     	  		</div>
     	  	</div>

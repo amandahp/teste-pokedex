@@ -16,8 +16,11 @@ const Home = () => {
 	const error = useSelector(state => state.error)
 
 	const [displayedPokemon, setDisplayedPokemon] = useState([])
+	const [ pokemonInput, setPokemonInput ] = useState('')
+	const notFoundPokemon = 'Nenhum pokemon encontrado'
 
 	useEffect(() => {
+		console.log('inicio')
 		dispatch(triggerGetPokemonData())
 	}, [])
 
@@ -30,6 +33,26 @@ const Home = () => {
 		console.log('array de objeto', specificPokemonData)
 	}, [specificPokemonData])
 
+	const handlePokemonInput = (pokemonName) => {
+		setPokemonInput(pokemonName)
+
+	}
+
+	const handlePokemonSearch = () => {
+		const filteredPokemon = specificPokemonData.filter(pokemon => pokemon.name.toLowerCase() === pokemonInput.toLowerCase())
+		console.log(filteredPokemon)
+		if (filteredPokemon.length) {
+			setDisplayedPokemon(filteredPokemon)
+		} else {
+			alert(notFoundPokemon)
+			setDisplayedPokemon(specificPokemonData)
+		}
+		setPokemonInput('')
+	}
+
+
+
+
 
 	return (
 		<>
@@ -37,7 +60,7 @@ const Home = () => {
 				<div>
 					<Header />
 					<div className='grid-container'>
-						<SearchBar className='search-bar-home' />
+						<SearchBar inputValue={pokemonInput} handleClick={handlePokemonSearch} handleChange={handlePokemonInput} className='search-bar-home' />
 						{displayedPokemon.map((pokemon, index) => {
 						return (
 							<Card key={index+1} specificPokemonData={pokemon} />
