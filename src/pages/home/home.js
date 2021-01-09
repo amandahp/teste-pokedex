@@ -34,13 +34,13 @@ const Home = () => {
 			{displayedPokemon.length && !loading ? (
 				<div>
 					<Header />
-					{displayedPokemon.map((pokemon, index) => {
-						return (
-							<div> 
+					<div className='grid-container'> 
+						{displayedPokemon.map((pokemon, index) => {
+							return (
 								<Card key={index+1} specificPokemonData={pokemon} />
-							</div>
-						)
-					})}
+								)
+							})}
+					</div>
 				</div>
 			): (
 				<div><p>'loading'</p></div>

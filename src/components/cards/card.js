@@ -3,41 +3,43 @@ import './card.scss'
 
 const Card = ( {specificPokemonData} ) => {
   return (
-    <div>
-		<ul class="cards">
-    		<li class="cards_item">
-    	  		<div class="card">
-    	  		  <div class="card_image">
-					<p className='id-pokemon'>ID {specificPokemonData.id}</p>
-					<img className="pokemon-img"src={specificPokemonData.sprites.front_default || ''} alt='imagem do pokemon' />
-				  </div>
-    	  		  <div class="card_content">
-					<p className='name-pokemon'>{specificPokemonData.name}</p>
-					<div>
-						{specificPokemonData.types.map((type, index) => {
-							return (
-								<div key={index+1} className='pokemon-types'>
-									<span >{type.type.name}</span><span> {' '}</span>
+    <div className='container-item'>
+			<div className="container_item">
+    		<div className="cards_item">
+    	  	<div className="card">
+    	  		<div className="card_image">
+							<img className="pokemon-img" src={specificPokemonData.sprites.front_default || ''} alt='imagem do pokemon' />
+				  	</div>
+    	  		<div className="card_content">
+							<p className='name-pokemon'>{specificPokemonData.name}</p>
+							<p>ID do Pokemón: {specificPokemonData.id}</p>
+							<div>
+								<div  className='pokemon-types'>
+									<span> Tipo: </span>
+									{specificPokemonData.types.map((type, index) => {
+										return (
+												<>
+													<span key={index+1}>{type.type.name}</span><span> {' '}</span>
+												</>
+												)
+											})}
 								</div>
-							)
-						})}
-						{specificPokemonData.stats.map((stat, index) => {
-							return (
-								<div key={index+1}>
-									<br></br>
-									<span>Nome do stat:{stat.stat.name}</span>
-									<span> {' '} </span>
-									<br/>
-									<span>Valor do stat:{stat.base_stat}</span>
-								</div>
-							)
-							
-						})}
-					</div>
-    	  		  </div>
+								{specificPokemonData.stats.map((stat, index) => {
+									return (
+										<div key={index+1}>
+											<br></br>
+											<span>Nome do stat:{stat.stat.name}</span>
+											<span> {' '} </span>
+											<br/>
+											<span>Valor do stat:{stat.base_stat}</span>
+										</div>
+									)	
+								})}
+							</div>
     	  		</div>
-    		</li>
- 		</ul>
+    	  	</div>
+    		</div>
+ 		</div>
 	</div>
   )
 }
