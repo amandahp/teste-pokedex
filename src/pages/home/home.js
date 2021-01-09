@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { triggerGetPokemonData, triggerGetPokemonInfo } from '../../redux/actions';
 import Card from '../../components/cards/card'
+import Header from '../../components/header/header'
 import './home.scss';
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
 		<>
 			{displayedPokemon.length && !loading ? (
 				<div>
+					<Header />
 					{displayedPokemon.map((pokemon, index) => {
 						return (
 							<div> 

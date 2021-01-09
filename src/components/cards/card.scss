@@ -4,6 +4,11 @@
 $font-size:12px;
 $line-height: 0.4;
 $text-align: center;
+$secondary-color:  #A4E8EB;
+$background-card-color-bottom: #F5C3C1;
+$background-card-color-top:#F0E0F5;
+$color-font-title: #201724;
+$font-size-id: 10px;
 
 /* Design */
 *,
@@ -13,11 +18,10 @@ $text-align: center;
 }
 
 html {
-  background-color: #ecf9ff;
+  background-color: $secondary-color;
 }
 
 body {
-  color: #272727;
   font-family: 'Quicksand', serif;
   font-style: normal;
   font-weight: 400;
@@ -30,34 +34,10 @@ body {
   margin: 0 auto;
 }
 
-h1 {
-    font-size: 24px;
-    font-weight: 400;
-    text-align: center;
-}
-
 img {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
-}
-
-.btn {
-  color: #ffffff;
-  padding: 0.8rem;
-  font-size: 14px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  font-weight: 400;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: transparent;
-}
-
-.btn:hover {
-  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .cards {
@@ -88,7 +68,7 @@ img {
 }
 
 .card {
-  background-color: white;
+  background-color: $background-card-color-top;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -97,29 +77,14 @@ img {
 }
 
 .card_content {
-  padding: 1rem;
-  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+  padding: 0.1rem;
+  background: $background-card-color-bottom;
 }
-
-.card_title {
-  color: #ffffff;
-  text-transform: capitalize;
-  margin: 0px;
-}
-
-.card_text {
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.2;
-  margin-bottom: 1.25rem;    
-}
-
 
 .pokemon-img{
     width: 60%;
     position: relative;
     left: 20%;
-    box-shadow: 4px 3px 5px rgba(50, 50, 50, 0.77);
     border-radius: 100px;
     box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
 }
@@ -162,10 +127,27 @@ div {
 
 }
 
+
+.id-pokemon{
+    font-weight: bold;
+    color: $color-font-title ;
+    position: relative;
+    left: 34%;
+    font-size: $font-size-id;
+}
+
+.name-pokemon{
+    font-weight: bold;
+    color: $color-font-title;
+    text-shadow: 0 0 10px black,   
+    6px -2px 6px rgba(0, 0, 0, 0.55), 
+    6px -2px 1px rgba(0, 0, 0, 0.5);
+}
+
 .name-pokemon:first-letter {
     text-transform: uppercase;
-  }
+}
 
 .pokemon-types:first-letter {
     text-transform: uppercase;
-  }
+}

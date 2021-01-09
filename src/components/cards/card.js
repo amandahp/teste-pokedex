@@ -8,11 +8,11 @@ const Card = ( {specificPokemonData} ) => {
     		<li class="cards_item">
     	  		<div class="card">
     	  		  <div class="card_image">
+					<p className='id-pokemon'>ID {specificPokemonData.id}</p>
 					<img className="pokemon-img"src={specificPokemonData.sprites.front_default || ''} alt='imagem do pokemon' />
 				  </div>
     	  		  <div class="card_content">
 					<p className='name-pokemon'>{specificPokemonData.name}</p>
-					<p>ID do Pokemón: {specificPokemonData.id}</p>
 					<div>
 						{specificPokemonData.types.map((type, index) => {
 							return (
