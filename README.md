@@ -1,7 +1,7 @@
 ## Descrição do Projeto / Project description
 <p align="center"> PT: Criação de uma pokedex, consumindo API (https://pokeapi.co/) </p>
-<p align="center"> EN: Creation of a pokedex, consuming API (https://pokeapi.co/) </p>
 <p align="center">PT: Caminho de acesso a aplicação: http://localhost:3000/pokedex </p>
+<p align="center"> EN: Creation of a pokedex, consuming API (https://pokeapi.co/) </p>
 <p align="center">EN: Application access path: http://localhost:3000/pokedex</p>
 <p>Demonstração/ Demonstration:</p>
 <img src="src/utils/aplicação/Captura de tela de 2021-01-09 18-32-57.png" alt="responsive design"></img>
