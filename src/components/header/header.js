@@ -1,6 +1,6 @@
 import React from 'react'
 import  './header.scss'
-import pokemon from '../../utils/Poké_Ball.svg.png'
+import pokemon from '../../utils/img/Poké_Ball.svg'
 
 
 
